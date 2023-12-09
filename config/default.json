@@ -1,0 +1,17 @@
+{
+    "JWR_TOKEN": "TestToken",
+    "MainURL": "http://localhost:8088",
+    "mongoUri": "mongodb+srv://imperoroktov:j1oD4IfIpoDLccZ6@cluster0.pit6ljh.mongodb.net/?retryWrites=true&w=majority",
+    "DB_NAME": "TestForm",
+    "PORT": 8088,
+    "PathToKeySSHLand": "config/ssh_lend_key.pem",
+    "TOKEN_BOT": "",
+    "PRIZE_TELEGRAM_BOT_TOKEN": "",
+    "FTD_BOT_TOKEN": "",
+    "FTD_CHAT_ID": "",
+    "PATH_TO_HOME": "home/dist/home/index.html",
+    "HOME": true,
+    "GIT_USER": "den",
+    "GIT_KEY": "111",
+    "mongodb+srv://imperoroktov:SyWhnkRiewVjcaq8@cluster0.jforfs8.mongodb.net/":""
+}
