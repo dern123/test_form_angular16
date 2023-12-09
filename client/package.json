@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",
-    "build": "npm install && ng build --aot --configuration production --delete-output-path",
+    "build": "ng build --configuration production --delete-output-path",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
