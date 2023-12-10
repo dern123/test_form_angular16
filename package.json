@@ -24,8 +24,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env NODE_ENV=development concurrently \"npm start --prefix client\" \"nodemon app.js\"",
-    "serv": "cross-env NODE_ENV=development concurrently  \"nodemon app.js \"",
-    "start": "cross-env NODE_ENV=development concurrently  \"node app.js \"",
+    "serv": "cross-env NODE_ENV=default concurrently  \"nodemon app.js \"",
+    "start": "cross-env NODE_ENV=default concurrently  \"node app.js \"",
     "build": "npm install && npm run build --prefix client"
   },
   "repository": {
