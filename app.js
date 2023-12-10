@@ -47,8 +47,6 @@ app.use(session(({
 
   console.log("!!!!!!!!!!!");
   if(process.env.NODE_ENV === 'default'){
-  console.log("🚀 ~ file: app.js:50 ~ process.env.NODE_ENV:", process.env.NODE_ENV)
-
     app.use('/', express.static(path.join(__dirname,'public')))
   
     app.get('*', (req,res) => {
@@ -57,7 +55,7 @@ app.use(session(({
     // require("./server/middlewares/socket.middleware").connect(server, true)
   }
   else{
-    require("./server/middlewares/socket.middleware").connect(server, false)
+    // require("./server/middlewares/socket.middleware").connect(server, false)
   }
  async function start(){
     try{
