@@ -45,7 +45,7 @@ app.use(session(({
   require("./server/routes/auth/index.routes").configure(app);
 
   console.log("!!!!!!!!!!!");
-  if(process.env.NODE_ENV === 'default'){
+  // if(process.env.NODE_ENV === 'default'){
 
     app.use('/', express.static(path.join(__dirname,'public')))
   
@@ -53,10 +53,10 @@ app.use(session(({
       res.sendFile(path.resolve(__dirname, 'public/index.html'));
     } )
     // require("./server/middlewares/socket.middleware").connect(server, true)
-  }
-  else{
+  // }
+  // else{
     // require("./server/middlewares/socket.middleware").connect(server, false)
-  }
+  // }
  async function start(){
     try{
         mongoose.connect(mongoUrl, {});
