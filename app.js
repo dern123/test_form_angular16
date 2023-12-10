@@ -54,7 +54,7 @@ app.use(session(({
     app.get('*', (req,res) => {
       res.sendFile(path.resolve(__dirname, 'public/index.html'));
     } )
-    require("./server/middlewares/socket.middleware").connect(server, true)
+    // require("./server/middlewares/socket.middleware").connect(server, true)
   }
   else{
     require("./server/middlewares/socket.middleware").connect(server, false)
