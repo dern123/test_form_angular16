@@ -12,6 +12,5 @@
     "PATH_TO_HOME": "home/dist/home/index.html",
     "HOME": true,
     "GIT_USER": "den",
-    "GIT_KEY": "111",
-    "mongodb+srv://imperoroktov:SyWhnkRiewVjcaq8@cluster0.jforfs8.mongodb.net/":""
+    "GIT_KEY": "111"
 }

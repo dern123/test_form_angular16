@@ -9,8 +9,9 @@ const bodyParser = require("body-parser");
 const MongoStore = require("connect-mongo");
 
 const PORT = process.env.PORT || config.get("PORT");
-const mongoUrl = "mongodb+srv://imperoroktov:j1oD4IfIpoDLccZ6@cluster0.pit6ljh.mongodb.net?directConnection=true";
-// config.get('mongoUri');
+const mongoUrl = config.get('mongoUri');
+// "mongodb+srv://imperoroktov:j1oD4IfIpoDLccZ6@cluster0.pit6ljh.mongodb.net?directConnection=true";
+// "mongodb+srv://imperoroktov:SyWhnkRiewVjcaq8@cluster0.jforfs8.mongodb.net/":""
 
 const app = express();
 const server = require("http").Server(app);
@@ -45,7 +46,7 @@ app.use(session(({
   require("./server/routes/auth/index.routes").configure(app);
 
   console.log("!!!!!!!!!!!");
-  // if(process.env.NODE_ENV === 'default'){
+  if(process.env.NODE_ENV === 'default'){
 
     app.use('/', express.static(path.join(__dirname,'public')))
   
@@ -53,10 +54,10 @@ app.use(session(({
       res.sendFile(path.resolve(__dirname, 'public/index.html'));
     } )
     // require("./server/middlewares/socket.middleware").connect(server, true)
-  // }
-  // else{
+  }
+  else{
     // require("./server/middlewares/socket.middleware").connect(server, false)
-  // }
+  }
  async function start(){
     try{
         mongoose.connect(mongoUrl, {});
