@@ -1,7 +1,7 @@
 {
     "JWR_TOKEN": "TestToken",
     "MainURL": "http://localhost:8088",
-    "mongoUri": "mongodb+srv://imperoroktov:j1oD4IfIpoDLccZ6@cluster0.pit6ljh.mongodb.net/?retryWrites=true&w=majority",
+    "mongoUri": "mongodb+srv://imperoroktov:j1oD4IfIpoDLccZ6@cluster0.pit6ljh.mongodb.net",
     "DB_NAME": "TestForm",
     "PORT": 8088,
     "PathToKeySSHLand": "config/ssh_lend_key.pem",
