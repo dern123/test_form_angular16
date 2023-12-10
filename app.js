@@ -9,7 +9,8 @@ const bodyParser = require("body-parser");
 const MongoStore = require("connect-mongo");
 
 const PORT = process.env.PORT || config.get("PORT");
-const mongoUrl = config.get('mongoUri');
+const mongoUrl = "mongodb+srv://imperoroktov:j1oD4IfIpoDLccZ6@cluster0.pit6ljh.mongodb.net";
+// config.get('mongoUri');
 
 const app = express();
 const server = require("http").Server(app);
