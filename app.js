@@ -44,7 +44,7 @@ app.use(session(({
   require("./server/routes/auth/index.routes").configure(app);
 
   console.log("!!!!!!!!!!!");
-  if(process.env.NODE_ENV === 'production'){
+  if(process.env.NODE_ENV === 'default'){
 
     app.use('/', express.static(path.join(__dirname,'public')))
   
