@@ -47,6 +47,7 @@ app.use(session(({
 
   console.log("!!!!!!!!!!!");
   if(process.env.NODE_ENV === 'default'){
+  console.log("🚀 ~ file: app.js:50 ~ process.env.NODE_ENV:", process.env.NODE_ENV)
 
     app.use('/', express.static(path.join(__dirname,'public')))
   
