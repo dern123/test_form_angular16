@@ -60,8 +60,8 @@ app.use(express.static(__dirname + '/client/src'));
   }
  async function start(){
     try{
-        mongoose.connect(mongoUrl);
-        mongoose.connection.on('connected', () => {});
+    //     mongoose.connect(mongoUrl);
+    //     mongoose.connection.on('connected', () => {});
         // mongoose.connection.on('reconnected', () => {
         //   console.info('Mongo reconnected', {tags: ['mongo']});
         // });
