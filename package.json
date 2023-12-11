@@ -27,7 +27,7 @@
     "dev": "cross-env NODE_ENV=default concurrently \"npm start --prefix client\" \"nodemon app.js\"",
     "serv": "cross-env NODE_ENV=default concurrently  \"nodemon app.js \"",
     "start": "cross-env NODE_ENV=default concurrently  \"node app.js \"",
-    "build": "npm install && npm run build --prefix client"
+    "build": "npm install"
   },
   "repository": {
     "type": "git",
