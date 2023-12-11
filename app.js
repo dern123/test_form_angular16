@@ -24,20 +24,20 @@ app.get("/",(req,res) => {
   })
 app.use(express.static(__dirname + '/client/src'));
 
-app.use(session(({
-    secret: config.get("JWR_TOKEN"),
-    key: "SID",
-    cookie: {
-      path:"/",
-      httpOnly:true,
-      maxAge: null
-    },
-    store: MongoStore.create({
-      mongoUrl,
-    }),
-    autoRemove : 'interval' ,
-    autoRemoveInterval : 120 // Минуты
-  })))
+// app.use(session(({
+//     secret: config.get("JWR_TOKEN"),
+//     key: "SID",
+//     cookie: {
+//       path:"/",
+//       httpOnly:true,
+//       maxAge: null
+//     },
+//     store: MongoStore.create({
+//       mongoUrl,
+//     }),
+//     autoRemove : 'interval' ,
+//     autoRemoveInterval : 120 // Минуты
+//   })))
 
   app.use(passport.initialize());
   require("./server/middlewares/passport")(passport);
