@@ -60,10 +60,7 @@ app.use(session(({
   }
  async function start(){
     try{
-        mongoose.connect(mongoUrl, {
-          // useUnifiedTopology: true,
-          // useNewUrlParser: true,
-        });
+        mongoose.connect(mongoUrl);
         mongoose.connection.on('connected', () => {});
         // mongoose.connection.on('reconnected', () => {
         //   console.info('Mongo reconnected', {tags: ['mongo']});
