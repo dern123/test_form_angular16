@@ -3,14 +3,5 @@
     "MainURL": "http://localhost:8088",
     "mongoUri": "mongodb+srv://imperoroktov:j1oD4IfIpoDLccZ6@cluster0.pit6ljh.mongodb.net",
     "DB_NAME": "TestForm",
-    "PORT": 27017,
-    "PathToKeySSHLand": "config/ssh_lend_key.pem",
-    "TOKEN_BOT": "",
-    "PRIZE_TELEGRAM_BOT_TOKEN": "",
-    "FTD_BOT_TOKEN": "",
-    "FTD_CHAT_ID": "",
-    "PATH_TO_HOME": "home/dist/home/index.html",
-    "HOME": true,
-    "GIT_USER": "den",
-    "GIT_KEY": "111"
+    "PORT": 8088
 }

@@ -59,7 +59,23 @@ app.use(session(({
   }
  async function start(){
     try{
-        mongoose.connect(mongoUrl, {});
+        mongoose.connect(mongoUrl, {
+          useUnifiedTopology: true,
+          useNewUrlParser: true,
+        });
+        mongoose.connection.on('connected', () => {});
+        mongoose.connection.on('reconnected', () => {
+          console.info('Mongo reconnected', {tags: ['mongo']});
+        });
+        mongoose.connection.on('disconnected', () => {
+          console.info('Mongo disconnected', {tags: ['mongo']});
+        });
+        mongoose.connection.on('close', () => {
+          console.info('Mongo closed', {tags: ['mongo']});
+        });
+        mongoose.connection.on('error', (error) => {
+          console.info(error, {tags: ['mongo']});
+        });
         console.log("AAAAAAAAAAAA")
         server.listen(PORT, () => {
             console.info(`Server started on port: ${PORT}`)

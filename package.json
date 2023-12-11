@@ -31,14 +31,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dern123/test_form.git"
+    "url": "git+https://github.com/dern123/test_form_angular16.git"
   },
   "author": "Strizhalov Denis",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dern123/test_form/issues"
+    "url": "https://github.com/dern123/test_form_angular16/issues"
   },
-  "homepage": "https://github.com/dern123/test_form#readme",
+  "homepage": "https://github.com/dern123/test_form_angular16#readme",
   "description": "",
   "devDependencies": {
     "concurrently": "^8.2.2",
