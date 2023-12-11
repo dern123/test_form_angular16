@@ -45,7 +45,7 @@ exports.signup = async(req, res) => {
         const checkLogin = await UsersModel.findOne({ login });
         const userAll = (await UsersModel.find()).length-1;
         console.log("🚀 ~ file: auth.controller.js:20 ~ exports.signup=async ~ userAll:", userAll)
-        const token = config.get("TOKEN_BOT");
+        // const token = config.get("TOKEN_BOT");
         
         if (!login && !password && !email){
             return res.status(500).json("notDataAutorization");

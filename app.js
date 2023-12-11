@@ -9,7 +9,8 @@ const bodyParser = require("body-parser");
 const MongoStore = require("connect-mongo");
 
 const PORT = process.env.PORT || config.get("PORT");
-const mongoUrl = config.get('mongoUri');
+const mongoUrl = process.env.mongoUri || config.get('mongoUri') || "mongodb://localhost:27017";
+// config.get('mongoUri');
 // "mongodb+srv://imperoroktov:j1oD4IfIpoDLccZ6@cluster0.pit6ljh.mongodb.net?directConnection=true";
 // "mongodb+srv://imperoroktov:SyWhnkRiewVjcaq8@cluster0.jforfs8.mongodb.net/":""
 
@@ -24,20 +25,20 @@ app.get("/",(req,res) => {
   })
 app.use(express.static(__dirname + '/client/src'));
 
-// app.use(session(({
-//     secret: config.get("JWR_TOKEN"),
-//     key: "SID",
-//     cookie: {
-//       path:"/",
-//       httpOnly:true,
-//       maxAge: null
-//     },
-//     store: MongoStore.create({
-//       mongoUrl,
-//     }),
-//     autoRemove : 'interval' ,
-//     autoRemoveInterval : 120 // Минуты
-//   })))
+app.use(session(({
+    secret: config.get("JWR_TOKEN"),
+    key: "SID",
+    cookie: {
+      path:"/",
+      httpOnly:true,
+      maxAge: null
+    },
+    store: MongoStore.create({
+      mongoUrl,
+    }),
+    autoRemove : 'interval' ,
+    autoRemoveInterval : 120 // Минуты
+  })))
 
   app.use(passport.initialize());
   require("./server/middlewares/passport")(passport);
@@ -60,7 +61,7 @@ app.use(express.static(__dirname + '/client/src'));
   }
  async function start(){
     try{
-        // mongoose.connect(mongoUrl);
+        mongoose.connect(mongoUrl);
         mongoose.connection.on('connected', () => {
           console.info('Mongo connected', {tags: ['mongo']});
         });
