@@ -9,7 +9,7 @@ const bodyParser = require("body-parser");
 const MongoStore = require("connect-mongo");
 
 const PORT = process.env.PORT || config.get("PORT");
-const mongoUrl = config.get('mongoUri');
+const mongoUrl =process.env.DATABASE_URL || config.get('mongoUri');
 // "mongodb+srv://imperoroktov:j1oD4IfIpoDLccZ6@cluster0.pit6ljh.mongodb.net?directConnection=true";
 // "mongodb+srv://imperoroktov:SyWhnkRiewVjcaq8@cluster0.jforfs8.mongodb.net/":""
 
