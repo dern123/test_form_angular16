@@ -60,8 +60,10 @@ app.use(express.static(__dirname + '/client/src'));
   }
  async function start(){
     try{
-    //     mongoose.connect(mongoUrl);
-    //     mongoose.connection.on('connected', () => {});
+        mongoose.connect(mongoUrl);
+        mongoose.connection.on('connected', () => {
+          console.info('Mongo connected', {tags: ['mongo']});
+        });
         // mongoose.connection.on('reconnected', () => {
         //   console.info('Mongo reconnected', {tags: ['mongo']});
         // });
@@ -79,7 +81,7 @@ app.use(express.static(__dirname + '/client/src'));
             console.info(`Server started on port: ${PORT}`)
         });
     }catch(err){
-        console.error("SERVER EXIT", e)
+        console.error("SERVER EXIT", err)
         process.exit(1);
     }
   }
