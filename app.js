@@ -32,9 +32,9 @@ app.use(session(({
       httpOnly:true,
       maxAge: null
     },
-    store: MongoStore.create({
-      mongoUrl,
-    }),
+    // store: MongoStore.create({
+    //   mongoUrl,
+    // }),
     autoRemove : 'interval' ,
     autoRemoveInterval : 120 // Минуты
   })))
