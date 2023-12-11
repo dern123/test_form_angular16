@@ -9,7 +9,7 @@ const bodyParser = require("body-parser");
 const MongoStore = require("connect-mongo");
 
 const PORT = process.env.PORT || config.get("PORT");
-const mongoUrl =process.env.DATABASE_URL || config.get('mongoUri');
+const mongoUrl = config.get('mongoUri');
 // "mongodb+srv://imperoroktov:j1oD4IfIpoDLccZ6@cluster0.pit6ljh.mongodb.net?directConnection=true";
 // "mongodb+srv://imperoroktov:SyWhnkRiewVjcaq8@cluster0.jforfs8.mongodb.net/":""
 
@@ -51,6 +51,7 @@ app.use(session(({
   
     app.get('*', (req,res) => {
       res.sendFile(path.resolve(__dirname, 'public/index.html'));
+      console.info("public");
     } )
     // require("./server/middlewares/socket.middleware").connect(server, true)
   }
@@ -64,18 +65,18 @@ app.use(session(({
           // useNewUrlParser: true,
         });
         mongoose.connection.on('connected', () => {});
-        mongoose.connection.on('reconnected', () => {
-          console.info('Mongo reconnected', {tags: ['mongo']});
-        });
-        mongoose.connection.on('disconnected', () => {
-          console.info('Mongo disconnected', {tags: ['mongo']});
-        });
-        mongoose.connection.on('close', () => {
-          console.info('Mongo closed', {tags: ['mongo']});
-        });
-        mongoose.connection.on('error', (error) => {
-          console.info(error, {tags: ['mongo']});
-        });
+        // mongoose.connection.on('reconnected', () => {
+        //   console.info('Mongo reconnected', {tags: ['mongo']});
+        // });
+        // mongoose.connection.on('disconnected', () => {
+        //   console.info('Mongo disconnected', {tags: ['mongo']});
+        // });
+        // mongoose.connection.on('close', () => {
+        //   console.info('Mongo closed', {tags: ['mongo']});
+        // });
+        // mongoose.connection.on('error', (error) => {
+        //   console.info(error, {tags: ['mongo']});
+        // });
         console.log("AAAAAAAAAAAA")
         server.listen(PORT, () => {
             console.info(`Server started on port: ${PORT}`)
