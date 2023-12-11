@@ -32,9 +32,9 @@ app.use(session(({
       httpOnly:true,
       maxAge: null
     },
-    // store: MongoStore.create({
-    //   mongoUrl,
-    // }),
+    store: MongoStore.create({
+      mongoUrl,
+    }),
     autoRemove : 'interval' ,
     autoRemoveInterval : 120 // Минуты
   })))
@@ -60,7 +60,7 @@ app.use(session(({
   }
  async function start(){
     try{
-        mongoose.connect(mongoUrl);
+        // mongoose.connect(mongoUrl);
         mongoose.connection.on('connected', () => {
           console.info('Mongo connected', {tags: ['mongo']});
         });
